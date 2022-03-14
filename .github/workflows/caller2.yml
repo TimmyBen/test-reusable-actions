@@ -23,4 +23,6 @@ jobs:
           node-version: "14"
 
       - name: Run the service
-        run: node index2.js
+        run: |
+          npm install
+          node index.js
