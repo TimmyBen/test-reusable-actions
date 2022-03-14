@@ -25,5 +25,4 @@ jobs:
 
       - name: Run the service
         run: |
-          npm install
-          node index.js
+          node caller1/index.js
