@@ -24,4 +24,4 @@ jobs:
 
       - name: Run the service
         run: |
-          node caller2/index.js
+          node caller2/index2.js
