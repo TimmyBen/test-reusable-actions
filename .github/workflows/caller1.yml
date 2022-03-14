@@ -9,7 +9,7 @@ on:
 
 jobs:
   call-general-workflow:
-    uses: ./.github/workflows.called-generally.yml
+    uses: ./.github/workflows/called-generally.yml
 
   do-its-own-job:
     name: Run-Its-Own-Job
