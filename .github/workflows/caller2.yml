@@ -2,9 +2,10 @@ name: Call a reusable workflow
 
 on:
   push:
+    paths:
+      - "caller2/**"
     branches:
-      - main
-
+      - master
 jobs:
   call-general-workflow:
     uses: ./.github/workflows.called-generally.yml

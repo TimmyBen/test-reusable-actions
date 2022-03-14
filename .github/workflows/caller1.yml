@@ -2,8 +2,10 @@ name: Call a reusable workflow
 
 on:
   push:
+    paths:
+      - "caller1/**"
     branches:
-      - main
+      - master
 
 jobs:
   call-general-workflow:
