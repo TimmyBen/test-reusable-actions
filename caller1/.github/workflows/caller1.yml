@@ -1,0 +1,23 @@
+name: Call a reusable workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  call-general-workflow:
+    uses: ./.github/workflows.called-generally.yml
+
+  do-its-own-job:
+    name: Run-Its-Own-Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+        run: node index.js
