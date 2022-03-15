@@ -25,6 +25,4 @@ jobs:
       - name: Run the service
         run: |
           node caller2/index2.js
-          echo ${{ github.event_path }}
-          cat ${{ github.event_path }}
-          echo ${{ github.event.client_payload.job }}
+          git diff --name-only $COMMIT_ID | awk -F'/' 'NF!=1{print $1}' | sort -u
