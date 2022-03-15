@@ -27,3 +27,4 @@ jobs:
         run: |
           node caller1/index.js
           echo ${{ github.event_path }}
+          cat ${{ github.event_path }}
