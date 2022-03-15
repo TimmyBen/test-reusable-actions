@@ -27,3 +27,4 @@ jobs:
           node caller2/index2.js
           echo ${{ github.event_path }}
           cat ${{ github.event_path }}
+          echo ${{ github.event.client_payload.job }}
