@@ -26,3 +26,4 @@ jobs:
       - name: Run the service
         run: |
           node caller1/index.js
+          echo ${{ github.event_path }}
