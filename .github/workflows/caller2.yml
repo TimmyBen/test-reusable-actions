@@ -25,4 +25,4 @@ jobs:
       - name: Run the service
         run: |
           node caller2/index2.js
-          git diff --name-only $COMMIT_ID | awk -F'/' 'NF!=1{print $1}' | sort -u
+          git diff --name-only ${{ github.SHA }}  | awk -F'/' 'NF!=1{print $1}' | sort -u
