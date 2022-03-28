@@ -26,5 +26,5 @@ jobs:
       - name: Run the service
         run: |
           node caller1/index.js
-          echo ${{ github.event_path }}
-          cat ${{ github.event_path }}
+          filepath=$(git diff --name-only HEAD~1 $GITHUB_SHA | awk -F'/' 'NF!=1{print $1}' | sort -u)
+          echo $filepath
