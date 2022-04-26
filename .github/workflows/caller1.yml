@@ -14,6 +14,7 @@ jobs:
     uses: ./.github/workflows/called-generally.yml
     with:
       username: Timilehin
+      directory: caller1
 
   # do-its-own-job:
   #   name: Run-Its-Own-Job

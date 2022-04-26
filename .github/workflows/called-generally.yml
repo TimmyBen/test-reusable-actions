@@ -6,6 +6,9 @@ on:
       username:
         required: true
         type: string
+      directory:
+        required: true
+        type: string
 
 
 jobs:
@@ -15,4 +18,7 @@ jobs:
 
     steps: 
       - name: Print this
-        run: echo ${{ inputs.username }}
+        run: |
+          echo ${{ inputs.username }}
+          ls -la
+        working-directory: ${{ inputs.directory }}
