@@ -17,9 +17,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: ${{ inputs.directory }}
+
       - name: Print this
         run: |
           echo ${{ inputs.username }}
           ls -la
           pwd
-        # working-directory: ${{ inputs.directory }}
