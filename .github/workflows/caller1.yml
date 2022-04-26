@@ -11,21 +11,24 @@ on:
 jobs:
   call-general-workflow:
     uses: ./.github/workflows/called-generally.yml
+    with:
+      username: Timilehin
 
-  do-its-own-job:
-    name: Run-Its-Own-Job
-    runs-on: ubuntu-latest
+  # do-its-own-job:
+  #   name: Run-Its-Own-Job
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v1
 
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "14"
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: "14"
 
-      - name: Run the service
-        run: |
-          node caller1/index.js
-          filepath=$(git diff --name-only HEAD~1 $GITHUB_SHA | awk -F'/' 'NF!=1{print $1}' | sort -u)
-          echo $filepath
+  #     - name: Run the service
+  #       run: |
+  #         node caller1/index.js
+  #         filepath=$(git diff --name-only HEAD~1 $GITHUB_SHA | awk -F'/' 'NF!=1{print $1}' | sort -u)
+  #         echo $filepath
+  #         echo 
