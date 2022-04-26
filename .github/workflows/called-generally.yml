@@ -15,6 +15,9 @@ jobs:
   example_job:
     name: Echo Something
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.directory }}
 
     steps: 
       - name: Checkout
@@ -25,4 +28,4 @@ jobs:
           echo ${{ inputs.username }}
           ls -la
           pwd
-        working-directory: caller1
+        
