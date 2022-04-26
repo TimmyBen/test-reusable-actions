@@ -13,10 +13,6 @@ jobs:
     name: Echo Something
     runs-on: ubuntu-latest
 
-    steps:
-      # - uses: ./.github/workflows/my-action
-      #   with:
-      #     username: ${{ inputs.username }}
-      
+    steps: 
       - name: Print this
-        run: echo $${{ inputs.username }}
+        run: echo ${{ inputs.username }}

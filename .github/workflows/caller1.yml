@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - "caller1/**"
+      - "./.github/workflows/caller1.yml"
     branches:
       - master
 
