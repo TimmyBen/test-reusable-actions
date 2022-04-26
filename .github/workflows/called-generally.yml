@@ -27,3 +27,4 @@ jobs:
           echo ${{ inputs.username }}
           ls -la
           pwd
+        working-directory: caller1
