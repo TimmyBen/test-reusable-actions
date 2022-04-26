@@ -1,28 +1,32 @@
-name: Call a reusable workflow
+name: Call a reusable workflow 2
 
 on:
   push:
     paths:
-      - "caller2/**"
+      - caller2/**
+      - .github/workflows/caller2.yml
     branches:
       - master
 jobs:
   call-general-workflow:
     uses: ./.github/workflows/called-generally.yml
+    with:
+      username: Dipo
+      directory: caller2
 
-  do-its-own-job:
-    name: Run-Its-Own-Job
-    runs-on: ubuntu-latest
+  # do-its-own-job:
+  #   name: Run-Its-Own-Job
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v1
 
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "14"
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: "14"
 
-      - name: Run the service
-        run: |
-          node caller2/index2.js
-          git diff --name-only ${{ github.SHA }}  | awk -F'/' 'NF!=1{print $1}' | sort -u
+  #     - name: Run the service
+  #       run: |
+  #         node caller2/index2.js
+  #         git diff --name-only ${{ github.SHA }}  | awk -F'/' 'NF!=1{print $1}' | sort -u
