@@ -33,6 +33,7 @@ jobs:
         run: |
           echo 'Hello World!'
           pwd
+          ls
 
       - name: Checkout
         uses: actions/checkout@v1
@@ -43,7 +44,7 @@ jobs:
 
       - name: Run the service
         run: node index2.js
-        working-directory: /caller2
+        working-directory: ./caller2
 
   stop-runner:
     name: Stop self-hosted EC2 runner
